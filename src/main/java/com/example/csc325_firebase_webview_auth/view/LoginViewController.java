@@ -67,6 +67,15 @@ public class LoginViewController {
         }
         try {
             UserRecord user = App.fauth.getUserByEmail(emailField.getText());
+        }catch (FirebaseAuthException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("email or password is incorrect");
+            alert.showAndWait();
+            return;
+        }
+        try {
             try {
                 ApiFuture<QuerySnapshot> future = App.fstore.collection("Users").get();
                 List<QueryDocumentSnapshot> documents;
@@ -74,12 +83,12 @@ public class LoginViewController {
                 if (documents.size() > 0) {
                     System.out.println("Outing....");
                     for (QueryDocumentSnapshot document : documents) {
-                        if (document.getString("Email").equals(user.getEmail())) {
+                        if (document.getString("Email").equals(emailField.getText())) {
                             if (document.getString("Password").equals(passwordField.getText())) {
                                 try {
 
                                     sharedData.setImageUrl(document.getString("ImageURL"));
-                                    sharedData.setUsername(user.getEmail());
+                                    sharedData.setUsername(emailField.getText());
                                     App.scene.getWindow().setHeight(600);
                                     App.scene.getWindow().setWidth(900);
                                     App.setRoot("/files/AccessFBView.fxml");
@@ -110,13 +119,8 @@ public class LoginViewController {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        } catch (FirebaseAuthException e) {
-            e.printStackTrace();
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Recheck Email");
-            alert.showAndWait();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
 
 

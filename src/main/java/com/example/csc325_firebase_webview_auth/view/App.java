@@ -34,7 +34,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        System.setProperty("GOOGLE_APPLICATION_CREDENTIALS",App.class.getResource("/files/key.json").getPath());
+
         fstore = contxtFirebase.firebase();
         fauth = FirebaseAuth.getInstance();
         fstorage = StorageClient.getInstance();
