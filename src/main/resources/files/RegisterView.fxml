@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="main" alignment="CENTER" prefHeight="650.0" spacing="20.0" stylesheets="@Login/Forms.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.csc325_firebase_webview_auth.view.RegisterViewController">
+    <children>
+      <HBox>
+         <children>
+            <Button fx:id="returnToLoginButton" mnemonicParsing="false" onAction="#returnToLogin" stylesheets="@Login/Forms.css" text="Return To Login">
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin></Button>
+         </children>
+      </HBox>
+
+        <ImageView id="avatar" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@account_circle_24dp_5F6368_FILL0_wght400_GRAD0_opsz24(1).png" />
+            </image>
+        </ImageView>
+        <Label styleClass="main-label" stylesheets="@Login/Forms.css" text="Register">
+            <font>
+                <Font name="Noto Kufi Arabic Regular" size="20.0" />
+            </font>
+        </Label>
+        <TextField fx:id="emailfield" maxWidth="300.0" minWidth="300.0" promptText="Email" styleClass="input-field" stylesheets="@Login/Forms.css">
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+            <padding>
+                <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+            </padding>
+        </TextField>
+      <TextField fx:id="passwordField" maxWidth="300.0" minWidth="300.0" promptText="Password" styleClass="input-field" stylesheets="@Login/Forms.css">
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+         </padding>
+      </TextField>
+      <Button fx:id="uploadButton" mnemonicParsing="false" onAction="#saveImage" text="UploadImage" />
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
+            <children>
+                <Button fx:id="createAccountButton" mnemonicParsing="false" onAction="#CreateAccount" stylesheets="@Login/Forms.css" text="Create Account">
+               <HBox.margin>
+                  <Insets bottom="20.0" />
+               </HBox.margin></Button>
+            </children>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="30.0" left="20.0" right="20.0" top="30.0" />
+    </padding>
+</VBox>

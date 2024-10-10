@@ -1,0 +1,24 @@
+#Menu{
+    -fx-background-color: #703406;
+}
+
+.Button{
+    -fx-background-color: #d1701b;
+    -fx-border-radius: 15px;
+}
+
+#Form{
+    -fx-background-color:  #03fc07;
+}
+
+
+#PhotoSection{
+    -fx-background-color: #d1701b;
+}
+
+#StatusBar{
+    -fx-background-color: #ad9f93;
+}
+.table-cell {
+
+}

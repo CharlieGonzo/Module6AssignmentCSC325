@@ -1,0 +1,31 @@
+.button{
+    -fx-background-color: darkgreen;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+    -fx-text-fill: white;
+    -fx-padding: 8px 20px;
+
+}
+
+.main-label{
+    -fx-font-weight: 400;
+}
+
+#avatar{
+    fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 0, 2);
+}
+
+.button:hover{
+    -fx-background-color: darkblue;
+}
+
+.input-field{
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 10, 0, 0, 2);
+    -fx-border-width: 2px;
+}
+

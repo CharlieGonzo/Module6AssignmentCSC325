@@ -3,8 +3,6 @@ module com.example.csc325_firebase_webview_auth {
     requires javafx.fxml;
     requires javafx.graphics;
     requires jdk.jsobject;
-    requires java.xml;
-    requires java.logging;
     requires javafx.web;
     requires com.google.auth.oauth2;
     requires google.cloud.firestore;
@@ -13,6 +11,12 @@ module com.example.csc325_firebase_webview_auth {
 
     requires google.cloud.core;
     requires com.google.auth;
+    requires java.desktop;
+    requires com.google.api.services.storage;
+    requires google.cloud.storage;
+    requires io.netty.common;
+    requires gapic.google.cloud.storage.v2;
+    requires java.sql;
 
 
     opens com.example.csc325_firebase_webview_auth.viewmodel to jdk.jsobject;

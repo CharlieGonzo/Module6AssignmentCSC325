@@ -1,34 +1,46 @@
 package com.example.csc325_firebase_webview_auth.view;//package modelview;
 
 import com.example.csc325_firebase_webview_auth.model.Person;
+import com.example.csc325_firebase_webview_auth.model.SharedData;
 import com.example.csc325_firebase_webview_auth.viewmodel.AccessDataViewModel;
 import com.google.api.core.ApiFuture;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.QueryDocumentSnapshot;
-import com.google.cloud.firestore.QuerySnapshot;
-import com.google.cloud.firestore.WriteResult;
+import com.google.cloud.firestore.*;
 import com.google.firebase.auth.FirebaseAuthException;
 import com.google.firebase.auth.UserRecord;
 
-import java.io.IOException;
+import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
 
 public class AccessFBView {
+    @FXML
+    private TableColumn<Person, String> age;
+
+    @FXML
+    private TableColumn<Person, String> major;
 
 
-     @FXML
+    @FXML
+    private TableColumn<Person, String> name;
+
+
+    @FXML
     private TextField nameField;
     @FXML
     private TextField majorField;
@@ -40,6 +52,12 @@ public class AccessFBView {
     private Button readButton;
     @FXML
     private TextArea outputField;
+    @FXML
+    private ImageView profileImg;
+    @FXML
+    private TableView<Person> persons;
+
+    private SharedData sharedData;
      private boolean key;
     private ObservableList<Person> listOfUsers = FXCollections.observableArrayList();
     private Person person;
@@ -47,7 +65,19 @@ public class AccessFBView {
         return listOfUsers;
     }
 
-    void initialize() {
+    @FXML
+    void initialize() throws URISyntaxException, MalformedURLException {
+        age.setCellValueFactory(new PropertyValueFactory<>("age"));
+        name.setCellValueFactory(new PropertyValueFactory<>("name"));
+        major.setCellValueFactory(new PropertyValueFactory<>("major"));
+        sharedData = SharedData.getInstance();
+        System.out.println(sharedData.getImageUrl());
+        String path = downloadImage(sharedData.getImageUrl());
+        System.out.println(path);
+    Image image = new Image(path);
+    profileImg.setImage(image);
+
+
 
         AccessDataViewModel accessDataViewModel = new AccessDataViewModel();
         nameField.textProperty().bindBidirectional(accessDataViewModel.userNameProperty());
@@ -103,14 +133,15 @@ public class AccessFBView {
                 System.out.println("Outing....");
                 for (QueryDocumentSnapshot document : documents)
                 {
-                    outputField.setText(outputField.getText()+ document.getData().get("Name")+ " , Major: "+
-                            document.getData().get("Major")+ " , Age: "+
-                            document.getData().get("Age")+ " \n ");
+//                    outputField.setText(outputField.getText()+ document.getData().get("Name")+ " , Major: "+
+//                            document.getData().get("Major")+ " , Age: "+
+//                            document.getData().get("Age")+ " \n ");
                     System.out.println(document.getId() + " => " + document.getData().get("Name"));
                     person  = new Person(String.valueOf(document.getData().get("Name")),
                             document.getData().get("Major").toString(),
                             Integer.parseInt(document.getData().get("Age").toString()));
                     listOfUsers.add(person);
+                    persons.setItems(listOfUsers);
                 }
             }
             else
@@ -156,5 +187,36 @@ public class AccessFBView {
             return false;
         }
 
+    }
+
+    private static String downloadImage(String imageUrl) {
+        String fileName;
+        try {
+            URL url = new URL(imageUrl);
+            fileName = getFileName(url);
+            File file = new File(fileName);
+
+            try (InputStream in = new BufferedInputStream(url.openStream());
+                 FileOutputStream out = new FileOutputStream(file)) {
+
+                byte[] data = new byte[1024];
+                int count;
+                while ((count = in.read(data, 0, data.length)) != -1) {
+                    out.write(data, 0, count);
+                }
+                System.out.println("Downloaded: " + file.getAbsolutePath());
+                return file.toURI().toString();
+
+            }
+        } catch (IOException e) {
+            System.err.println("Error downloading image from " + imageUrl + ": " + e.getMessage());
+        }
+
+        return "";
+    }
+
+    private static String getFileName(URL url) {
+        String fileName = url.getPath();
+        return fileName.substring(fileName.lastIndexOf('/') + 1);
     }
 }
