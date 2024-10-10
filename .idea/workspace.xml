@@ -4,33 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4ae5f67-a013-4cbc-a589-49fa29fa9b6b" name="Changes" comment="GUI update">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/model/SharedData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/viewmodel/FormDataViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/files/Login/Forms.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/files/Login/MainMenu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/files/LoginView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/files/RegisterView.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/files/account_circle_24dp_5F6368_FILL0_wght400_GRAD0_opsz24(1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/files/key.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/files/rams.jpeg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/model/FirestoreContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/model/FirestoreContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/AccessFBView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/AccessFBView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/csc325_firebase_webview_auth/view/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/files/AccessFBView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/files/AccessFBView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/model/FirestoreContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/model/FirestoreContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/AccessFBView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/AccessFBView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/WebContainerController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/WebContainerController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/WebContainerController$Bridge.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/WebContainerController$Bridge.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/WebContainerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/csc325_firebase_webview_auth/view/WebContainerController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/files/AccessFBView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/files/AccessFBView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
-    </list>
+    <list default="true" id="e4ae5f67-a013-4cbc-a589-49fa29fa9b6b" name="Changes" comment="GUI update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -181,6 +155,7 @@
       <workItem from="1728521956322" duration="3670000" />
       <workItem from="1728567178488" duration="3949000" />
       <workItem from="1728577163857" duration="347000" />
+      <workItem from="1728577970503" duration="343000" />
     </task>
     <task id="LOCAL-00001" summary="reduce Java version to 17">
       <option name="closed" value="true" />

@@ -121,9 +121,9 @@ public class AccessFBView {
          {
              key = false;
 
-        //asynchronously retrieve all documents
+
         ApiFuture<QuerySnapshot> future =  App.fstore.collection("References").get();
-        // future.get() blocks on response
+
         List<QueryDocumentSnapshot> documents;
         try
         {
@@ -161,7 +161,7 @@ public class AccessFBView {
         public void sendVerificationEmail() {
         try {
             UserRecord user = App.fauth.getUser("name");
-            //String url = user.getPassword();
+
 
         } catch (Exception e) {
         }

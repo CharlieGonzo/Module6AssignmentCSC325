@@ -69,7 +69,6 @@ public class LoginViewController {
             UserRecord user = App.fauth.getUserByEmail(emailField.getText());
             try {
                 ApiFuture<QuerySnapshot> future = App.fstore.collection("Users").get();
-                // future.get() blocks on response
                 List<QueryDocumentSnapshot> documents;
                 documents = future.get().getDocuments();
                 if (documents.size() > 0) {

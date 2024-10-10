@@ -95,7 +95,6 @@ public class RegisterViewController {
                 data.put("Password", passwordField.getText());
                 data.put("ImageURL",  imgURL);
 
-                //asynchronously write data
                 ApiFuture<WriteResult> result = docRef.set(data);
                 main.getChildren().add(2,new Label("Loading..."));
                 result.addListener(() -> {
@@ -133,15 +132,15 @@ public class RegisterViewController {
     }
 
     private String uploadImage(File currImg) throws IOException {
-        String bucketName = "gonzalezcsc325mvvm.appspot.com"; // Replace with your bucket name
-            String blobName = "images/" + currImg.getName(); // Path in the storage
+        String bucketName = "gonzalezcsc325mvvm.appspot.com";
+            String blobName = "images/" + currImg.getName();
             String mimeType = Files.probeContentType(currImg.toPath());
 
-            // Automatically detect MIME type
+
         Blob blob = App.fstorage.bucket(bucketName).create(blobName,new FileInputStream(currImg),mimeType);
         blob.createAcl(Acl.of(Acl.User.ofAllUsers(), Acl.Role.READER));
         System.out.println("file uploaded");
-            // Return the download URL
+
             return String.format("https://storage.googleapis.com/%s/%s", bucketName, blobName);
 
     }
@@ -158,7 +157,7 @@ public class RegisterViewController {
                 new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg")
         );
 
-        // Show open dialog
+
         Stage stage = (Stage) uploadButton.getScene().getWindow();
         File file = fileChooser.showOpenDialog(stage);
 
